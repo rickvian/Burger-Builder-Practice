@@ -1,3 +1,3 @@
-# REACT-COMPLETE-GUIDE
+# Burger Builder Practice
 
-Udemy React Practice
+Burger Builder React Practice
