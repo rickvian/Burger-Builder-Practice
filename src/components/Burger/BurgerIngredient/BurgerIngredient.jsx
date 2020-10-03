@@ -44,7 +44,7 @@ class BurgerIngredient extends Component {
 };
 
 BurgerIngredient.PropType = {
-    type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired
 }
 
 export default BurgerIngredient;
