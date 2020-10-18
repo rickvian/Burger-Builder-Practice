@@ -22,6 +22,7 @@ const Burger = props => {
 
     return (
         <div className={classes.Burger}>
+        test edit android
             <BurgerIngredient type="bread-top"/>
             {transformedIngredients}
             <BurgerIngredient type="bread-bottom"/>
