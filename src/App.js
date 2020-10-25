@@ -15,12 +15,11 @@ class App extends Component {
           	<Route path="/checkout" component={Checkout}/>
           	<Route path="/" exact component={BurgerBuilder}/>
           </Switch>
-          <BurgerBuilder />
-          <Checkout/>
+  
         </Layout>
       </div>
     );
-  }
+}
 }
 
 export default App;
