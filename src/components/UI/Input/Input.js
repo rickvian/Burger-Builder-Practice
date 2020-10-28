@@ -4,11 +4,20 @@ import classes from "./Input.module.css";
 
 const Input = (props) => {
     let inputElement = null;
+    const inputClasses = [classes.InputElement];
+    let validationError =  null;
+
+    if (props.invalid && props.shouldValidate && props.touched){
+        inputClasses.push(classes.Invalid);
+        validationError = <span className={classes.ValidationError}>Please enter valid value</span>;
+    }
+
+    console.log(validationError);
     switch (props.elementType) {
         case ( "input" ):
             inputElement = (
                 <input
-                    className={classes.InputElement}
+                    className={inputClasses.join(' ')}
                     {...props.elementConfig}
                     value={props.value}
                      onChange={props.changed}
@@ -18,7 +27,7 @@ const Input = (props) => {
         case ( "textarea" ):
             inputElement = (
                 <textarea
-                    className={classes.InputElement}
+                    className={inputClasses.join(' ')}
                     {...props.elementConfig}
                     value={props.value}
                      onChange={props.changed}
@@ -28,7 +37,7 @@ const Input = (props) => {
 
         case ( "select" ):
             inputElement = (
-                <select className={classes.InputElement} onChange={props.changed}>
+                <select className={inputClasses.join(' ')} onChange={props.changed}>
                     {
                         props.elementConfig.options.map(option => (
                             <option key={option.value} value={option.value}>{option.displayValue}</option>
@@ -40,7 +49,7 @@ const Input = (props) => {
         default:
             inputElement = (
                 <input
-                    className={classes.InputElement}
+                    className={inputClasses.join(' ')}
                     {...props.elementConfig}
                     value={props.value}
                     onChange={props.changed}
@@ -52,6 +61,7 @@ const Input = (props) => {
         <div className={classes.Input}>
             <label className={classes.Label}>{props.label}</label>
             {inputElement}
+            {validationError}
         </div>
     );
 };
