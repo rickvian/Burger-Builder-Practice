@@ -1,13 +1,11 @@
-import * as actionTypes from './actions';
+//reducer for burger Builder
+
+import * as actionTypes from '../actions/actionTypes';
 
 const intialState = {
-    ingredients: {
-        salad: 0,
-        bacon: 0,
-        cheese: 0,
-        meat: 0
-    },
+    ingredients: null,
     totalPrice: 4,
+    error: false
 }
 
 const INGREDIENT_PRICES = {
@@ -42,6 +40,26 @@ const reducer = (state = intialState, action) => {
             };
             break;
 
+        case actionTypes.SET_INGREDIENTS:
+            return {
+                ...state,
+                ingredients: {
+                    salad: action.ingredients.salad,
+                    bacon: action.ingredients.bacon,
+                    cheese: action.ingredients.cheese,
+                    meat: action.ingredients.meat
+                },
+                totalPrice: 4,
+                error: false
+            };
+            break;
+
+        case actionTypes.FETCH_INGREDIENTS_FAILED:
+            return {
+                ...state,
+                error: true
+            };
+            break;
         default:
             return state;
     }
