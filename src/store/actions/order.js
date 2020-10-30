@@ -67,12 +67,13 @@ export const fetchOrderStart = () => {
     }
 }
 
-export const fetchOrders = (token) => {
+export const fetchOrders = (token, userId) => {
     //(dispatch, getState) parameter to get the current redux state, though the state is not in this file, not recommended
-    console.log(token);
+    console.log(token, userId);
     return dispatch => {
         dispatch(fetchOrderStart());
-        axios.get('/orders.json?auth=' + token)
+        const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';
+        axios.get('/orders.json' + queryParams)
             .then(res => {
 
                 const fetchedOrders = [];
