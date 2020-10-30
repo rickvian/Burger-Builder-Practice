@@ -31,7 +31,7 @@ export const purchaseBurger = (orderData, token) => {
         axios
             .post("/orders.json?auth=" + token, orderData)
             .then((response) => {
-                console.log(response.data);
+
                 dispatch(purchaseBurgerSuccess(response.data.name, orderData))
             })
             .catch((error) => {
@@ -69,7 +69,7 @@ export const fetchOrderStart = () => {
 
 export const fetchOrders = (token, userId) => {
     //(dispatch, getState) parameter to get the current redux state, though the state is not in this file, not recommended
-    console.log(token, userId);
+
     return dispatch => {
         dispatch(fetchOrderStart());
         const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';

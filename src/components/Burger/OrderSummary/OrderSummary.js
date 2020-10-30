@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import Aux from "../../../hoc/AuxComponent/AuxComponent";
 import Button from "../../UI/Button/Button";
 
 class OrderSummary extends Component {
   //this could be a functional component, instead of class component
-  componentDidUpdate(){
+  componentDidUpdate() {
   }
 
   render() {
@@ -39,6 +38,5 @@ class OrderSummary extends Component {
   }
 }
 
-OrderSummary.propTypes = {};
 
 export default OrderSummary;

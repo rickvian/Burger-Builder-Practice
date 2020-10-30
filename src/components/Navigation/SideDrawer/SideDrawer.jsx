@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
@@ -16,7 +15,7 @@ const SideDrawer = props => {
     return (
         <Aux>
             <Backdrop show={props.open} clicked={props.closed} />
-            <div className={attachedClasses.join(' ')}>
+            <div className={attachedClasses.join(' ')} onClick={props.closed}>
                 <div className={classes.Logo}>
                     <Logo />
 
@@ -29,8 +28,5 @@ const SideDrawer = props => {
     );
 };
 
-SideDrawer.propTypes = {
-
-};
 
 export default SideDrawer;

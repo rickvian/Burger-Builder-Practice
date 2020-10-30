@@ -1,41 +1,39 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classes from "./Input.module.css";
 
 const Input = (props) => {
     let inputElement = null;
     const inputClasses = [classes.InputElement];
-    let validationError =  null;
+    let validationError = null;
 
-    if (props.invalid && props.shouldValidate && props.touched){
+    if (props.invalid && props.shouldValidate && props.touched) {
         inputClasses.push(classes.Invalid);
         validationError = <span className={classes.ValidationError}>Please enter valid value</span>;
     }
 
-    console.log(validationError);
     switch (props.elementType) {
-        case ( "input" ):
+        case ("input"):
             inputElement = (
                 <input
                     className={inputClasses.join(' ')}
                     {...props.elementConfig}
                     value={props.value}
-                     onChange={props.changed}
+                    onChange={props.changed}
                 />
             );
             break;
-        case ( "textarea" ):
+        case ("textarea"):
             inputElement = (
                 <textarea
                     className={inputClasses.join(' ')}
                     {...props.elementConfig}
                     value={props.value}
-                     onChange={props.changed}
+                    onChange={props.changed}
                 />
             );
             break;
 
-        case ( "select" ):
+        case ("select"):
             inputElement = (
                 <select className={inputClasses.join(' ')} onChange={props.changed}>
                     {
@@ -65,7 +63,5 @@ const Input = (props) => {
         </div>
     );
 };
-
-Input.propTypes = {};
 
 export default Input;
