@@ -9,20 +9,20 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import Aux from '../../../hoc/AuxComponent/AuxComponent';
 
 const SideDrawer = props => {
-    let attachedClasses = [ classes.SideDrawer, classes.Close ];
-    if(props.open){
+    let attachedClasses = [classes.SideDrawer, classes.Close];
+    if (props.open) {
         attachedClasses = [classes.SideDrawer, classes.Open];
     }
     return (
         <Aux>
-            <Backdrop show={props.open} clicked={props.closed}/>
+            <Backdrop show={props.open} clicked={props.closed} />
             <div className={attachedClasses.join(' ')}>
                 <div className={classes.Logo}>
                     <Logo />
-                
+
                 </div>
                 <nav>
-                    <NavigationItems/>
+                    <NavigationItems isAuthenticated={props.isAuth} />
                 </nav>
             </div>
         </Aux>
@@ -30,7 +30,7 @@ const SideDrawer = props => {
 };
 
 SideDrawer.propTypes = {
-    
+
 };
 
 export default SideDrawer;

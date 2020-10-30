@@ -24,11 +24,12 @@ export const purchaseBurgerStart = (orderData) => {
     }
 }
 
-export const purchaseBurger = (orderData) => {
-    return dispatch => {
+export const purchaseBurger = (orderData, token) => {
+
+    return (dispatch) => {
         dispatch(purchaseBurgerStart());
         axios
-            .post("/orders.json", orderData)
+            .post("/orders.json?auth=" + token, orderData)
             .then((response) => {
                 console.log(response.data);
                 dispatch(purchaseBurgerSuccess(response.data.name, orderData))
@@ -66,11 +67,12 @@ export const fetchOrderStart = () => {
     }
 }
 
-export const fetchOrders = () => {
-
+export const fetchOrders = (token) => {
+    //(dispatch, getState) parameter to get the current redux state, though the state is not in this file, not recommended
+    console.log(token);
     return dispatch => {
         dispatch(fetchOrderStart());
-        axios.get('/orders.json')
+        axios.get('/orders.json?auth=' + token)
             .then(res => {
 
                 const fetchedOrders = [];

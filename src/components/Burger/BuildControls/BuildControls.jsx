@@ -4,10 +4,10 @@ import classes from './BuildControls.module.css';
 import BuildControl from './BuildControl/BuildControl.jsx';
 
 const controls = [
-    { label: 'Salad', type:'salad'},
-    { label: 'Bacon', type:'bacon'},
-    { label: 'Cheese', type:'cheese'},
-    { label: 'Meat', type:'meat'}
+    { label: 'Salad', type: 'salad' },
+    { label: 'Bacon', type: 'bacon' },
+    { label: 'Cheese', type: 'cheese' },
+    { label: 'Meat', type: 'meat' }
 ];
 const BuildControls = (props) => {
     return (
@@ -16,16 +16,16 @@ const BuildControls = (props) => {
                 Current Price: <strong>{props.price.toFixed(2)}</strong>
             </p>
 
-             {controls.map((ctrl)=>(<BuildControl 
-             key={ctrl.label} 
-             label={ctrl.label}
-           
-             added={()=> props.ingredientAdded(ctrl.type)}
-             removed={()=> props.ingredientRemoved(ctrl.type)}
-             disabled={props.disabled[ctrl.type]} />))}
+            {controls.map((ctrl) => (<BuildControl
+                key={ctrl.label}
+                label={ctrl.label}
 
-             <button className={classes.OrderButton} disabled={!props.purchaseable}
-             onClick={props.ordered}>ORDER NOW</button>
+                added={() => props.ingredientAdded(ctrl.type)}
+                removed={() => props.ingredientRemoved(ctrl.type)}
+                disabled={props.disabled[ctrl.type]} />))}
+
+            <button className={classes.OrderButton} disabled={!props.purchaseable}
+                onClick={props.ordered}>{props.isAuth ? 'ORDER NOW' : 'Sign Up to Order'} </button>
         </div>
     );
 };
