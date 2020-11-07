@@ -43,6 +43,7 @@ const removeIngredient = (state, action) => {
 }
 
 const setIngredients = (state, action) => {
+ 
     return updateObject(state, {
         ingredients: {
             salad: action.ingredients.salad,
