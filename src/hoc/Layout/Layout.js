@@ -9,14 +9,14 @@ import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 
 const Layout = (props) => {
   //const [state, setState] = useState(initialState);
-  const [sideDrawerIsVisible, setSideDrawerVisible] = useState(false);
+  const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
 
   const sideDrawerClosedHandler = () => {
-    setSideDrawerVisible(false);
+    setSideDrawerIsVisible(false);
   };
 
   const sideDrawerToggleHandler = () => {
-    setSideDrawerVisible(!sideDrawerIsVisible);
+    setSideDrawerIsVisible(!sideDrawerIsVisible);
   };
 
   return (

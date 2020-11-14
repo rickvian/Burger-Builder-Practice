@@ -6,7 +6,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
   //just returning class wrapping component, that can report on error
 
   return (props) => {
-    const [error, setError] = useState(true);
+    const [error, setError] = useState(null);
     //const the function because will return at below
     const reqInterceptor = axios.interceptors.request.use((req) => {
       setError(null);
