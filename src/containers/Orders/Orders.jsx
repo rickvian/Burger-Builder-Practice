@@ -26,7 +26,7 @@ const Orders = props => {
     }
     return (
         <div>
-            { orders}
+            { orders }
         </div>
     );
     
