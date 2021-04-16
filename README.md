@@ -16,24 +16,14 @@ to run the local server type
 
 you should able to see the burger builder at http://localhost:3000/
 
-## Usage
-TODO: Write usage instructions
+## Notes
+Error notes: if you encounter this error:
 
-## Contributing
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request
+TypeError: composeEnhancers is not a function
 
-## History
-TODO: Write history
+you have to install redux dev tools here:
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related?hl=en
 
-## Credits
-TODO: Write credits
-
-## License
-TODO: Write license
 
 ]]></content>
   <tabTrigger>readme</tabTrigger>
