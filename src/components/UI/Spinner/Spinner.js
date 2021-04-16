@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classes from './Spinner.module.css';
 
 const Spinner = props => {
@@ -10,8 +9,5 @@ const Spinner = props => {
     );
 };
 
-Spinner.propTypes = {
-    
-};
 
 export default Spinner;

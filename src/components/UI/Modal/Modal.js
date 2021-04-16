@@ -7,13 +7,13 @@ import Backdrop from "../Backdrop/Backdrop.js";
 class Modal extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     //return true to update, return false to prevent update
-    return nextProps.show !== this.props.show || nextProps.children !== this.props.children 
+    return nextProps.show !== this.props.show || nextProps.children !== this.props.children
   }
-  
-  
-  componentWillUpdate() {
-    console.log("component will update");
-  }
+
+
+  // componentWillUpdate() {
+  //   console.log("component will update");
+  // }
 
   render() {
     return (

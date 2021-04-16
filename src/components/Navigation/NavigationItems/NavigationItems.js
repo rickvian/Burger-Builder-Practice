@@ -1,23 +1,23 @@
 //Container of the navigation items
 
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem.js';
 
 const NavigationItems = props => {
     return (
         <ul className={classes.NavigationItems}>
-            <NavigationItem link="/" active>Burger Builder</NavigationItem>
-            <NavigationItem link="">
-                Checkout
-            </NavigationItem>
+            <NavigationItem link="/" exact>Burger Builder</NavigationItem>
+            { props.isAuthenticated ? <NavigationItem link="/orders">Orders</NavigationItem> : null}
+            { !props.isAuthenticated
+                ? <NavigationItem link="/auth">Authenticate</NavigationItem>
+                : <NavigationItem link="/logout">Logout</NavigationItem>
+            }
+
         </ul>
     );
 };
 
-NavigationItems.propTypes = {
-    
-};
 
 export default NavigationItems;
