@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import Aux from "../AuxComponent/AuxComponent";
-import classes from "./Layout.module.css";
+import "./Layout.css";
 
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
@@ -31,7 +31,19 @@ const Layout = (props) => {
         closed={sideDrawerClosedHandler}
       />
 
-      <main className={classes.Content}>{props.children}</main>
+      <main className="Content">{props.children}</main>
+
+        
+      <div className="github">
+        <div className="buttons">
+        <a href="https://github.com/rickvian/Burger-Builder-Practice" className="btn btn-dark btn-mid" target="_blank">Fork me on GitHub</a>
+
+        </div>
+     
+
+      </div>
+
+
     </Aux>
   );
 };
